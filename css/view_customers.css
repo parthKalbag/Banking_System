@@ -1,0 +1,68 @@
+.inputClass {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.inputClass > div {
+    display: flex;
+    border: 1px solid rgba(79,117,226, 0.77);
+    align-items: center;
+    padding: 5px;
+    border-radius: 80px;
+    margin-right: 40px;
+}
+
+.inputClass input {
+    outline: none;
+    border: hidden;
+    padding-left: 5px;
+    margin-left: 8px;
+}
+
+.inputClass img {
+    height: 30px;
+    width: 30px;
+}
+
+.mainContent {
+    margin-top: 60px;
+}
+
+div.tableContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+div.tableContent > table {
+    width: 95%;
+    margin-top: 50px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+div.tableContent > table th, div.tableContent > table td  {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+div.tableContent > table thead {
+    background: rgba(79,117,226, 0.77);
+    color: white;
+}
+
+div.tableContent > table > tbody a {
+    display: flex;
+    background: rgba(79,117,226, 0.77);
+    align-items: center;
+    border-radius: 80px;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+    width: 73%;
+    padding: 5px;
+}
