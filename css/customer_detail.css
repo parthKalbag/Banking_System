@@ -1,0 +1,35 @@
+#customer_detail .modalMainContent {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#customer_detail .customerDetails h4 {
+    font-size: 20px;
+    color: #4F75E2;
+    text-transform: uppercase;
+}
+
+#customer_detail .customerDetails th {
+    font-weight: lighter;
+    font-size: 13px;
+    color: #4F75E2;
+    text-align: left;
+}
+
+#customer_detail .customerDetails td {
+    font-weight: lighter;
+    font-size: 13px;
+    color: #707070;
+    text-align: left;
+}
+
+#transact-send {
+    background: #4F75E2;
+    border-radius: 22px;
+    color: white;
+    text-align: center;
+    margin-top: 12px;
+    border: 1px solid #4F75E2;
+    padding: 5px 15px;
+}

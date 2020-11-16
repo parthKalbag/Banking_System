@@ -6,6 +6,7 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/view_customers.css">
+    <link rel="stylesheet" href="css/customer_detail.css">
     <!-- Icon for title -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <title>View Customers</title>
@@ -82,7 +83,7 @@
                             <td>987654321</td>
                             <td>85000</td>
                             <td style="display: flex; justify-content: center">
-                                <a href="#">
+                                <a href="#" onclick="openCustomerModal()">
                                     <div>
                                         <span>View Data</span>
                                     </div>
@@ -103,5 +104,10 @@
     <?php
         require_once "customer_detail.php";
     ?>
+<script>
+    function openCustomerModal() {
+        document.getElementById("customer_detail").style.display = "block";
+    }
+</script>
 </body>
 </html>
