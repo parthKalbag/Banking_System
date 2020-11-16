@@ -51,7 +51,7 @@
             </div>
         </section>
         <section class="title">
-            <span class="sub-title">Our Services</span>
+            <span class="sub-title" style="font-size: 23px;">Our Services</span>
         </section>
         <section class="cards">
             <div class="card">
