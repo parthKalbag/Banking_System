@@ -91,7 +91,7 @@
                                     echo "<td>" . $customerRow["user_phone_no"] . "</td>";
                                     echo "<td>" . $customerRow["current_balance"] . "</td>";
                                     echo "<td style='display: flex; justify-content: center;'>";
-                                    echo "<a href='#' onclick='openCustomerModal()'>";
+                                    echo "<a href = '#' onclick='openCustomerModal()'>";
                                     echo "<div><span>View Data</span></div>";
                                     echo "<div><img src='images/external-link-alt-solid.png' alt='' style='width: 20px; height: 20px;'></div>";
                                     echo "</a>";
