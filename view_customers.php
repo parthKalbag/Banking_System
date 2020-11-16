@@ -101,7 +101,7 @@
                             }
 
                             else {
-                                echo "No Results Found";
+                                echo "<tr><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>";
                             }
                         ?>
                     </tbody>

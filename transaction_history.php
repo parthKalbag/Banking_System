@@ -88,7 +88,7 @@
                                     }
                                     # Receiver Result
                                     $receiverSQL = "SELECT user_first_name, user_last_name from users where user_id=" . $row["receiver_id"];
-                                    $receiverResult = $conn->query($senderSQL);
+                                    $receiverResult = $conn->query($receiverSQL);
 
                                     if($receiverResult->num_rows > 0) {
                                         while ($receiverRow = $receiverResult->fetch_assoc()) {
@@ -109,10 +109,9 @@
                             }
 
                             else {
-                                echo "No Transactions Found";
+                                echo "<tr><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr>";
                             }
 
-                            $conn->close();
                         ?>
                     </tbody>
                 </table>
