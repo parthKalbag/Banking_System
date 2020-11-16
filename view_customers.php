@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/view_customers.css">
     <!-- Icon for title -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
-    <title>The Sparks Foundation Bank</title>
+    <title>View Customers</title>
 </head>
 <body>
     <nav>
@@ -99,6 +99,9 @@
     </main>
     <?php
         require_once "transfer_money.php";
+    ?>
+    <?php
+        require_once "customer_detail.php";
     ?>
 </body>
 </html>

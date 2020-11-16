@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/view_customers.css">
     <!-- Icon for title -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
-    <title>The Sparks Foundation Bank</title>
+    <title>Transaction History</title>
 </head>
 <body>
     <nav>

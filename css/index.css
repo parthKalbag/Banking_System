@@ -167,3 +167,37 @@ section.topContent .topContentImg {
     cursor: pointer;
 }
 
+.transferModalTitle {
+    text-align: center;
+    color: #4F75E2;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.transferModalForm form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.transferModalForm form select, .transferModalForm form input {
+    width: 100%;
+    border-left: hidden;
+    border-right: hidden;
+    border-top: hidden;
+    border-bottom: 1px solid #707070;
+    margin-top: 30px;
+}
+
+.transferModalForm form button[type="submit"] {
+    color: #fff;
+    background: rgba(79,117,226, 0.77);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 1px solid rgba(79,117,226, 0.77);
+    margin-top: 20px;
+    width: 80px;
+    border-radius: 60px;
+}
