@@ -101,21 +101,18 @@
     </div>
 </div>
 <script>
-    let transferMoneyModal = document.getElementById("transferMoney");
-    let transferBtn = document.getElementById("transfer");
-    let closeBtn = document.getElementById("close");
+    $("#transfer").on("click", function() {
+        $("#transferMoney").css("display", "block");
+    })
 
-    transferBtn.onclick = function () {
-        transferMoneyModal.style.display = "block";
-    }
+    $("#close").on("click", function() {
+        $("#transferMoney").css("display", "none");
+    })
 
-    closeBtn.onclick = function () {
-        transferMoneyModal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        if (event.target === transferMoneyModal) {
-            transferMoneyModal.style.display = "none";
+    $(window).on("click", function (event) {
+        let target = $(event.target);
+        if (target.is("#transferMoney")) {
+            $("#transferMoney").css("display", "none");
         }
-    }
+    })
 </script>

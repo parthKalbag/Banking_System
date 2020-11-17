@@ -35,22 +35,19 @@
     </div>
 </div>
 <script>
-    let customerDetailModal = document.getElementById("customer_detail");
-    let closeCustomerDetailBtn = document.getElementById("closeDetail");
-    let transactBtnFromDetail = document.getElementById("transact-send");
+    $("#closeDetail").on("click", function () {
+        $("#customer_detail").css("display", "none");
+    })
 
-    closeCustomerDetailBtn.onclick = function () {
-        customerDetailModal.style.display = "none";
-    }
+    $("#transact-send").on("click", function () {
+        $("#customer_detail").css("display", "none");
+        $("#transferMoney").css("display", "block");
+    })
 
-    transactBtnFromDetail.onclick = function () {
-        customerDetailModal.style.display = "none";
-        transferMoneyModal.style.display = "block";
-    }
-
-    window.onclick = function (event) {
-        if (event.target === customerDetailModal) {
-            customerDetailModal.style.display = "none";
+    $(window).on("click", function (event) {
+        let target = $(event.target);
+        if (target.is("#customer_detail")) {
+            $("#customer_detail").css("display", "none");
         }
-    }
+    })
 </script>

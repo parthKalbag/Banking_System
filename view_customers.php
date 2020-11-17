@@ -9,8 +9,24 @@
     <link rel="stylesheet" href="css/customer_detail.css">
     <!-- Icon for title -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <title>View Customers</title>
 </head>
+<style>
+    a.submitBtn {
+        display: flex;
+        background: rgba(79,117,226, 0.77);
+        border: 1px solid rgba(79,117,226, 0.77);
+        align-items: center;
+        border-radius: 80px;
+        justify-content: space-around;
+        text-decoration: none;
+        color: white;
+        width: 73%;
+        padding: 5px;
+    }
+</style>
 <body>
     <nav>
         <section class="brand">
@@ -91,7 +107,7 @@
                                     echo "<td>" . $customerRow["user_phone_no"] . "</td>";
                                     echo "<td>" . $customerRow["current_balance"] . "</td>";
                                     echo "<td style='display: flex; justify-content: center;'>";
-                                    echo "<a href = '#' onclick='openCustomerModal()'>";
+                                    echo "<a href='?id=1' class='submitBtn'>";
                                     echo "<div><span>View Data</span></div>";
                                     echo "<div><img src='images/external-link-alt-solid.png' alt='' style='width: 20px; height: 20px;'></div>";
                                     echo "</a>";
@@ -115,10 +131,11 @@
     <?php
         require_once "customer_detail.php";
     ?>
-<script>
-    function openCustomerModal() {
-        document.getElementById("customer_detail").style.display = "block";
-    }
-</script>
+    <script>
+        $(".submitBtn").on("click", function (event) {
+            event.preventDefault();
+            $("#customer_detail").css('display', 'block');
+        })
+    </script>
 </body>
 </html>

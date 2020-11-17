@@ -6,6 +6,8 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="images/favicon.ico" type="image/ico">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <title>The Sparks Foundation Bank</title>
 </head>
 <body>
