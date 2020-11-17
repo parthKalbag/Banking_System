@@ -10,7 +10,7 @@
     <!-- Icon for title -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <title>View Customers</title>
 </head>
 <style>
@@ -69,16 +69,6 @@
             </div>
         </section>
         <section class="mainContent">
-            <div class="inputClass">
-                <div>
-                    <div>
-                        <img src="images/search-solid.png" alt="" style="opacity: 65%; margin-left: 5px;">
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Search by Name...">
-                    </div>
-                </div>
-            </div>
             <div class="tableContent">
                 <table cellspacing="0">
                     <thead>
@@ -107,7 +97,7 @@
                                     echo "<td>" . $customerRow["user_phone_no"] . "</td>";
                                     echo "<td>" . $customerRow["current_balance"] . "</td>";
                                     echo "<td style='display: flex; justify-content: center;'>";
-                                    echo "<a href='?id=1' class='submitBtn'>";
+                                    echo "<a id='". $customerRow["user_id"] . "' class='submitBtn'>";
                                     echo "<div><span>View Data</span></div>";
                                     echo "<div><img src='images/external-link-alt-solid.png' alt='' style='width: 20px; height: 20px;'></div>";
                                     echo "</a>";
@@ -128,13 +118,79 @@
     <?php
         require_once "transfer_money.php";
     ?>
-    <?php
-        require_once "customer_detail.php";
-    ?>
+
+    <!-- Customer Detail Modal -->
+
+    <div id="customer_detail" class="modal">
+        <div class="modal-content">
+            <div>
+                <span id="closeDetail" style="cursor: pointer;">&times;</span>
+            </div>
+            <div class="modalMainContent">
+                <section class="sparksImg">
+                    <img src="images/TSF_logo.png" alt="TSF">
+                </section>
+                <section id="customerDetails">
+                    <div>
+                        <h4>Parth Kalbag</h4>
+                        <div>
+                            <table cellspacing="10" style="text-align: left;">
+                                <tr>
+                                    <th>Account No:-</th>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <th>Phone No:-</th>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <th>Email ID:-</th>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <th>Address:-</th>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <th>Current Balance:-</th>
+                                    <td>NA</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <button id="transact-send">Send Money</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
     <script>
-        $(".submitBtn").on("click", function (event) {
-            event.preventDefault();
+
+        $(".submitBtn").on("click", function () {
             $("#customer_detail").css('display', 'block');
+            $.ajax({
+                url: "customer_detail.php?id=" + this.id,
+                type: "POST",
+                success: function (data) {
+                    $("#customerDetails").html(data);
+                }
+            })
+        })
+
+        $("#closeDetail").on("click", function () {
+            $("#customer_detail").css("display", "none");
+        })
+
+        $("#transact-send").on("click", function () {
+            $("#customer_detail").css("display", "none");
+            $("#transferMoney").css("display", "block");
+        })
+
+        $(window).on("click", function (event) {
+            let target = $(event.target);
+            if (target.is("#customer_detail")) {
+                $("#customer_detail").css("display", "none");
+            }
         })
     </script>
 </body>

@@ -1,53 +1,41 @@
-<div id="customer_detail" class="modal">
-    <div class="modal-content">
-        <div>
-            <span id="closeDetail" style="cursor: pointer;">&times;</span>
-        </div>
-        <div class="modalMainContent">
-            <section class="sparksImg">
-                <img src="images/TSF_logo.png" alt="TSF">
-            </section>
-            <section class="customerDetails">
-                <h4>Parth Kalbag</h4>
-                <div>
-                    <table cellspacing="10">
-                        <tr>
-                            <th>Account No:-</th>
-                            <td>104353453465</td>
-                        </tr>
-                        <tr>
-                            <th>Phone No:-</th>
-                            <td>104353453465</td>
-                        </tr>
-                        <tr>
-                            <th>Email ID:-</th>
-                            <td>104353453465</td>
-                        </tr>
-                        <tr>
-                            <th>Address:-</th>
-                            <td>104353453465</td>
-                        </tr>
-                    </table>
-                </div>
-                <button id="transact-send">Send Money</button>
-            </section>
-        </div>
-    </div>
-</div>
-<script>
-    $("#closeDetail").on("click", function () {
-        $("#customer_detail").css("display", "none");
-    })
+<div style="text-align: center;">
+    <?php
+        require_once "mysql_connection.php";
 
-    $("#transact-send").on("click", function () {
-        $("#customer_detail").css("display", "none");
-        $("#transferMoney").css("display", "block");
-    })
+        if (isset($_GET["id"])) {
+            $sql = "SELECT * FROM users where user_id=" . $_GET["id"];
 
-    $(window).on("click", function (event) {
-        let target = $(event.target);
-        if (target.is("#customer_detail")) {
-            $("#customer_detail").css("display", "none");
+            $usersResult = $conn->query($sql);
+
+            if ($usersResult->num_rows > 0) {
+                while ($usersRow = $usersResult->fetch_assoc()) {
+                    echo "<h4 style='font-size: 24px;color: #4F75E2;'>" . $usersRow["user_first_name"] . " " . $usersRow["user_last_name"] . "</h4>";
+                    echo "<div style='text-align: center;'>";
+                    echo "<table cellspacing='10' style='text-align: left;'> ";
+                    echo "<tr>";
+                    echo "<td style='color: #4F75E2;text-transform: uppercase;'>Account No: </td>";
+                    echo "<td>" . $usersRow["user_id"] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                    echo "<td style='color: #4F75E2;text-transform: uppercase;'>Phone No: </td>";
+                    echo "<td>" . $usersRow["user_phone_no"] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                    echo "<td style='color: #4F75E2;text-transform: uppercase;'>Email: </td>";
+                    echo "<td>" . $usersRow["user_email"] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                    echo "<td style='color: #4F75E2;text-transform: uppercase;'>Address: </td>";
+                    echo "<td>" . $usersRow["user_address"] . "</td>";
+                    echo "</tr>";
+                    echo "<tr>";
+                    echo "<td style='color: #4F75E2;text-transform: uppercase;'>Current Balance: </td>";
+                    echo "<td>" . $usersRow["current_balance"] . "</td>";
+                    echo "</tr>";
+                    echo "</table>";
+                    echo "</div>";
+                }
+            }
         }
-    })
-</script>
+    ?>
+</div>

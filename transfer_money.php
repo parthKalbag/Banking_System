@@ -1,6 +1,7 @@
 <?php
     require_once "mysql_connection.php";
 
+    error_reporting(0);
     $senderID = $_POST["sender_id"] ?? -1;
     $receiverID = $_POST["receiver_id"] ?? -1;
     $amount = $_POST["amount"] ?? -1;
