@@ -1,6 +1,6 @@
 <div style="text-align: center;">
     <?php
-        require_once "mysql_connection.php";
+        require_once "../mysql_connection.php";
 
         if (isset($_GET["id"])) {
             $sql = "SELECT * FROM users where user_id=" . $_GET["id"];
