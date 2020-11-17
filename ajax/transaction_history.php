@@ -28,15 +28,8 @@
                     echo "<td>" . $receiverRow["user_first_name"] . "</td>";
                 }
             }
-
             echo "<td>" . $row["amount"] . "</td>";
             echo "<td>" . $row["transaction_date"] . "</td>";
-            echo "<td style='display: flex; justify-content: center'>";
-            echo "<a href='#'>";
-            echo "<div><span>Repeat</span></div>";
-            echo "<div><img src='images/redo-alt-solid.png' alt='' style='width: 20px; height: 20px;'></div>";
-            echo "</a>";
-            echo "</td>";
             echo "</tr>";
         }
     }

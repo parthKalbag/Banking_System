@@ -63,7 +63,6 @@
                         <th>Receiver Name</th>
                         <th>Amount</th>
                         <th>Transaction Date</th>
-                        <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody id="transactionHistory"></tbody>

@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+    font-family: Montserrat;
+    src: url("./Montserrat-Regular.ttf");
+}
 * {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
