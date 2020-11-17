@@ -43,7 +43,6 @@
                         $conn->query($updateTransaction);
 
                         $conn->commit();
-                        header('Location: http://localhost/Banking_System/transaction_history.php');
 
                     }
                     catch (Throwable $e) {
