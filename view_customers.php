@@ -40,10 +40,10 @@
         <section id="bigNavLinks">
             <ul class="nav-links">
                 <li>
-                    <a class="nav-link active" href="index.php" id="home1">Home</a>
+                    <a class="nav-link" href="index.php" id="home1">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="view_customers.php" id="view">View Customers</a>
+                    <a class="nav-link active" href="view_customers.php" id="view">View Customers</a>
                 </li>
                 <li>
                     <a class="nav-link" href="transaction_history.php" id="history">Transaction History</a>
