@@ -54,13 +54,13 @@
                 <a class="nav-link" href="transaction_history.php" id="history">Transaction History</a>
             </li>
             <li>
-                <a class="nav-link" href="#" id="transfer">Transfer Money</a>
+                <a class="nav-link" href="#" id="transferSmallNav">Transfer Money</a>
             </li>
         </ul>
     </nav>
     <main>
         <section class="topContent">
-            <div>
+            <div class="mainHeading">
                 <div>
                     <span class="main-content">Transaction History</span>
                 </div>
@@ -104,13 +104,14 @@
         $("#toggler-btn").on("click", function () {
             let nav = $("#smallNav");
             let smallNavDisplay = nav.css("display");
+            let widthOfBrowser = window.innerWidth;
 
-            if (smallNavDisplay === "none") {
+            if (smallNavDisplay === "none" && widthOfBrowser <= 798) {
                 nav.css("display", "block");
             }
 
 
-            else if (smallNavDisplay === "block") {
+            else if (smallNavDisplay === "block" && widthOfBrowser <= 798) {
                 nav.css("display", "none");
             }
         })

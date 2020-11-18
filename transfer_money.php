@@ -109,6 +109,10 @@
         $("#transferMoney").css("display", "none");
     })
 
+    $("#transferSmallNav").on("click", function () {
+        $("#transferMoney").css("display", "block");
+    })
+
     $(window).on("click", function (event) {
         let target = $(event.target);
         if (target.is("#transferMoney")) {

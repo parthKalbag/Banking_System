@@ -255,4 +255,12 @@ section.topContent .topContentImg {
     .activeSmallNav > a {
         color: #4F75E2!important;
     }
+
+    .mainHeading {
+        text-align: center;
+    }
+
+    .card {
+        margin-top: 40px;
+    }
 }
