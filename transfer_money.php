@@ -119,4 +119,20 @@
             $("#transferMoney").css("display", "none");
         }
     })
+
+    // Toggler Button for Navbar
+    $("#toggler-btn").on("click", function () {
+        let nav = $("#smallNav");
+        let smallNavDisplay = nav.css("display");
+        let widthOfBrowser = window.innerWidth;
+
+        if (smallNavDisplay === "none" && widthOfBrowser <= 798) {
+            nav.css("display", "block");
+        }
+
+
+        else if (smallNavDisplay === "block" && widthOfBrowser <= 798) {
+            nav.css("display", "none");
+        }
+    })
 </script>
