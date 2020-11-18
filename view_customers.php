@@ -151,7 +151,7 @@
                 </section>
                 <section id="customerDetails">
                     <div>
-                        <h4>Parth Kalbag</h4>
+                        <h4>NA</h4>
                         <div>
                             <table cellspacing="10" style="text-align: left;">
                                 <tr>
