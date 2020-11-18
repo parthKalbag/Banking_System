@@ -13,7 +13,7 @@
     <title>Transaction History</title>
 </head>
 <body>
-    <nav>
+    <nav id="largeNav">
         <section class="brand">
             <div>
                 <img src="images/TSF_logo.png" id="brand-logo" alt="Sparks Foundation">
@@ -22,22 +22,41 @@
                 <span>The Sparks Foundation Bank</span>
             </div>
         </section>
-        <section>
+        <section id="bigNavLinks">
             <ul class="nav-links">
                 <li>
-                    <a class="nav-link" href="index.php" id="home1">Home</a>
+                    <a class="nav-link active" href="index.php" id="home1">Home</a>
                 </li>
                 <li>
                     <a class="nav-link" href="view_customers.php" id="view">View Customers</a>
                 </li>
                 <li>
-                    <a class="nav-link active" href="#" id="history">Transaction History</a>
+                    <a class="nav-link" href="transaction_history.php" id="history">Transaction History</a>
                 </li>
                 <li>
                     <a class="nav-link" href="#" id="transfer">Transfer Money</a>
                 </li>
             </ul>
         </section>
+        <section id="toggler-btn">
+            <img src="images/bars-solid.png" alt="toggle" style="height: 30px;margin-right: 20px;">
+        </section>
+    </nav>
+    <nav id="smallNav">
+        <ul class="smallNavList">
+            <li>
+                <a class="nav-link" href="index.php" id="home1">Home</a>
+            </li>
+            <li>
+                <a class="nav-link" href="view_customers.php" id="view">View Customers</a>
+            </li>
+            <li class="activeSmallNav">
+                <a class="nav-link" href="transaction_history.php" id="history">Transaction History</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#" id="transfer">Transfer Money</a>
+            </li>
+        </ul>
     </nav>
     <main>
         <section class="topContent">
@@ -81,6 +100,21 @@
                 $("#transactionHistory").html(data)
             }
         })
+
+        $("#toggler-btn").on("click", function () {
+            let nav = $("#smallNav");
+            let smallNavDisplay = nav.css("display");
+
+            if (smallNavDisplay === "none") {
+                nav.css("display", "block");
+            }
+
+
+            else if (smallNavDisplay === "block") {
+                nav.css("display", "none");
+            }
+        })
+
     </script>
 </body>
 </html>
