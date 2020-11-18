@@ -44,6 +44,8 @@
 
                         $conn->commit();
 
+                        echo "<script>alert('The Payment was made successfully!')</script>";
+
                     }
                     catch (Throwable $e) {
                         $conn->rollback();
