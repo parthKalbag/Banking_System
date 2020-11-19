@@ -4,7 +4,7 @@
     error_reporting(0);
     $senderID = $_POST["sender_id"] ?? -1;
     $receiverID = $_POST["receiver_id"] ?? -1;
-    $amount = $_POST["amount"] ?? -1;
+    $amount = $_POST["amount"] ?? 0;
 
     if ($senderID !== -1 and $receiverID !== -1 and $amount > 0) {
         $senderSQL = "SELECT current_balance from users where user_id=" . $senderID;
@@ -53,6 +53,10 @@
                 }
             }
         }
+    }
+
+    else if ($amount < 0) {
+        echo "<script>alert('Amount should always be greater than zero')</script>";
     }
 ?>
 
